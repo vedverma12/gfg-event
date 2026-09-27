@@ -28,7 +28,7 @@ export function GalleryGrid() {
     <>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {galleryImages.map((image, index) => (
-          <motion.button key={image.src} type="button" onClick={() => setActive(index)} whileHover={{ y: -4 }} className={`group relative min-h-[280px] overflow-hidden border border-white/10 text-left ${index === 1 || index === 2 ? "lg:mt-12" : ""}`} aria-label={`Open image: ${image.label}`}>
+          <motion.button key={image.src} type="button" onClick={() => setActive(index)} whileHover={{ y: -4 }} className="group relative h-[280px] overflow-hidden border border-white/10 text-left" aria-label={`Open image: ${image.label}`}>
             <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover grayscale-[35%] transition duration-700 group-hover:scale-105 group-hover:grayscale-0" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/90 via-[#0a0a0f]/10 to-transparent" />
             <span className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3 text-xs font-semibold uppercase tracking-[0.1em]">
